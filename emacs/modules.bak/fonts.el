@@ -2,9 +2,6 @@
 
 (setq fontaine-presets
       '((regular
-         ;; I keep all properties for didactic purposes, but most can be
-         ;; omitted.  See the fontaine manual for the technicalities:
-         ;; <https://protesilaos.com/emacs/fontaine>.
          :default-family "JetBrains Mono"
          :default-weight regular
          :default-slant normal

@@ -28,6 +28,10 @@
 (setq auth-source-pass-file "~/.password-store")
 (setq auth-source-creation-default-password-scheme 'default)
 
+
+(setopt rcirc-authinfo
+        '(("Libera.Chat" nickserv "Naokotani" (auth-source-pass-get 'secret "irc/Naokotani"))))
+
 (defun nao/irc-connect ()
 	(interactive)
 	(erc-tls :server "irc.libera.chat"

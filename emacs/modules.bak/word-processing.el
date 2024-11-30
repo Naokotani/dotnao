@@ -1,10 +1,8 @@
-;; Enables spell checking for text mode and disable for some other modes
 (dolist (hook '(text-mode-hook))
   (add-hook hook (lambda () (flyspell-mode 1))))
 (dolist (hook '(change-log-mode-hook log-edit-mode-hook))
   (add-hook hook (lambda () (flyspell-mode -1))))
 
-;; Set spell checking to use the command line program hunspell
 (setq ispell-program-name "hunspell")
 (setq ispell-dictionary "en_CA")
 (setq ispell-alternate-dictionary "/usr/share/hunspell/en_CA-large.dic")
@@ -26,6 +24,7 @@
 \\begin{tcblisting}{
     listing engine=minted,
     minted style=nord,
+    minted language=,
     listing only,
     boxrule=1pt,
     colback=nordbg,

@@ -14,10 +14,6 @@
 
 (use-package elfeed)
 (global-set-key (kbd "C-c w") 'elfeed)
-;; (setq elfeed-feeds
-;;       '(("https://planet.emacslife.com/atom.xml" emacs)
-;;         ("https://protesilaos.com/codelog.xml"  coding)
-;;         ("https://protesilaos.com/politics.xml" politics)))
 
 (setq elfeed-feeds
         '(("https://protesilaos.com/politics.xml" politics)))

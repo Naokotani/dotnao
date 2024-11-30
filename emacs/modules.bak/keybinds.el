@@ -1,7 +1,10 @@
-;; Global keymaps
+(global-set-key (kbd "<escape>") 'persp-next)
 (global-set-key (kbd "<f5>") 'async-shell-command)
 (global-set-key (kbd "<f6>") 'eshell)
 (global-set-key (kbd "<f7>") 'hydra-window/body)
+(global-set-key (kbd "<f8>") 'display-line-numbers-mode)
+(global-set-key (kbd "<f10>") 'persp-switch)
+(global-set-key (kbd "<f10>") 'persp-switch)
 (global-set-key (kbd "C-c D") 'dirvish-dispatch)
 (global-set-key (kbd "C-c d") 'dirvish)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -17,8 +20,13 @@
 (global-set-key (kbd "C-S-t") 'nao/transpose-line-down)
 (global-set-key (kbd "M-j") 'avy-goto-char-2)
 (global-set-key (kbd "M-k") 'nao/copy-line)
-(define-key prog-mode-map (kbd "C-c C-o") 'browse-url-at-point)
+(global-set-key (kbd "M-K") 'duplicate-dwim)
+(global-set-key (kbd "C-x o") 'nao/other-window)
+(global-set-key (kbd "<mouse-8>") 'scroll-up-command)
+(global-set-key (kbd "<mouse-9>") 'scroll-down-command)
 
+(define-key prog-mode-map (kbd "C-c C-o") 'browse-url-at-point)
+"C-x o"
 (defun nao/move-divider-right ()
 		(if (windows-sharing-edge (selected-window) 'right)
 				(enlarge-window-horizontally 1)

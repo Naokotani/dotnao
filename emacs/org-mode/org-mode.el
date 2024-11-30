@@ -1,33 +1,20 @@
-;; Function to make Evil respect visual lines
-;;(defun nao/evil-visual-line ()
-;;  (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
-;;  (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line))
-
 ;; Ensure Org Mode is loaded
 (use-package org
   :straight t
-  ;;:hook
-  ;; Make evil respect visual lines in org mode
-  ;;(org-mode . nao/evil-visual-line)
   :bind
   (("C-c a" . org-agenda)))
 
 (setq org-agenda-span 14)
 
-;;basic defaults
 (setq org-hide-emphasis-markers t)     
 (setq org-startup-with-inline-images t)
 
-;; Setup evil for visual line mode
-;;(setq evil-respect-visual-line-mode t)
-
-;; Setup template for org source blocks
 (setq org-structure-template-alist
       '(("el" . "src emacs-lisp")
 		("js" . "src javascript")
 		("css" . "src css")
 		("sql" . "src sql")
-		("pu" . "src napkin-puml :file")
+		("pu" . "src plantuml :file")
 		("rs" . "src rust")
 		("c" . "src c")
 		("c++" . "src c++")
@@ -79,22 +66,6 @@
 (setq org-todo-keywords
 '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")
     (sequence "BACKLOG(b)" "PLAN(p)" "READY(r)" "ACTIVE(a)" "REVIEW(v)" "WAIT(w@/!)" "HOLD(h)" "|" "COMPLETED(c)" "CANC(k@)")))
-
-;; Tags for org agenda TODOs 
-(setq org-tag-alist
-'((:startgroup)
-    ; Put mutually exclusive tags here
-    (:endgroup)
-    ("@board" . ?B)
-    ("@home" . ?H)
-    ("@work" . ?W)
-    ("Agenda" . ?a)
-    ("Python" . ?p)
-    ("Emacs" . ?e)
-    ("Publish" . ?P)
-    ("Batch" . ?b)
-    ("Note" . ?n)
-    ("Idea" . ?i)))
 
 ;; Configure custom agenda views
 (setq org-agenda-custom-commands
@@ -182,6 +153,7 @@
   (("C-c n c" . denote)
    ("C-c n o" . denote-open-or-create)
    ("C-c n l" . denote-link)))
+
 (add-to-list 'load-path "~/.config/emacs/lisp")
 (eval-after-load 'ox '(require 'ox-koma-letter))
 (eval-after-load 'ox-koma-letter

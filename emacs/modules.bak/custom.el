@@ -39,11 +39,24 @@
 	(interactive)
 	(transpose-lines 1)
 	(previous-line 2))
-
-
-
-
-
-
-
-
+(repeat-mode)
+(use-package window
+  :ensure nil
+  :straight nil
+  :bind
+  ("C-x o"   . +other-window)
+  ("C-x O"   . +other-other-window)
+  (:repeat-map other-window-repeat-map
+               ("o" . +other-window)
+               ("O" . +other-other-window))
+  :config
+  (defun +other-other-window ()
+    "Go to previous window."
+    (interactive)
+    (other-window -1))
+  (defun +other-window ()
+    "Open cousult-buffer-other-window if only window or swich windows"
+    (interactive)
+    (if (one-window-p)
+        (consult-buffer-other-window)
+      (other-window 1))))

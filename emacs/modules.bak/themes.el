@@ -1,14 +1,10 @@
 (use-package modus-themes)
-
-;; Add all your customizations prior to loading the themes
 (setq modus-themes-italic-constructs t
       modus-themes-bold-constructs t)
 
 (modus-themes-select 'modus-vivendi-tinted)
 
 (define-key global-map (kbd "<f11>") #'modus-themes-toggle)
-
-;;Install all the icons for integration into doom modeline and Dirvish
 (use-package all-the-icons
   :straight t)
 
